@@ -14,7 +14,7 @@ from data import face, AnnotationTransform, Detection, detection_collate
 from utils.augmentations import PyramidAugmentation
 from layers.modules import MultiBoxLoss
 from train_net2net.pyramid_train import build_sfd, SFD
-from train_net2net.pyramid_train_mobile import build_sfd_mobile, SFD_mobile
+from train_net2net.pyramid_train_mobile_try1 import build_sfd_mobile, SFD_mobile
 import numpy as np
 import time
 from layers import *
