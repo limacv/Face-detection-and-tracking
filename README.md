@@ -23,7 +23,7 @@ wider_face_train_bbx_gt.txt & wider_face_val_bbx_gt.txt -> ./image_and_anno/anno
 3. run `$ python ./image_and_anno/anno/gen_anno_file_*` to generate anno files in the format we used
 4. if it outputs "`error in line: #`" during generating anno files, delete the specified line in generated anno file (this prevents the case when the image has no face, but presents `*.jpg 1 0 0 0 0` in anno file)
 
-### 2. get pretrained models
+### 2. Get pretrained models
 
 1. download pretrained net weight files from <https://pan.baidu.com/s/1yNGFegHFbKIRfs1g93TYgw>  
 Extraction code: ntec
