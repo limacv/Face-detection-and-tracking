@@ -1,0 +1,32 @@
+record process:
+ ─┬──try1-intermedia─┬─ 0-26000: lr = 1e-3; batch_size = 6; moment = 0.5; weights[16, 12, 12, 8, 8, 8]
+  |                  ├─ 26001-50000: lr = 1e-3; weights[16, 12, 12, 10, 8, 8]; others unchanged
+  |                  └─ 50001-_: b_z = 5; others unchanged
+  |
+  ├──try2-intermedia─┬─ 0-28000: lr = 1e-3; batch_size=6; moment=0.5;
+  |                  └─ 28001-46000: lr = 1e-4; batch_size=6; moment=0.5
+  |
+  ├──try1-final──┬── 0-24000: lr = 1e-4; batch_size = 8; moment = 0.3
+  |              ├── 24001-36000: lr = 2e-5; moment = 0.6; others unchanged
+  ├──try2-final──┬── 0-_ : lr = 1e-4; batch_size = 8; moment = 0.3; freeze_pretrained
+  |
+  |
+  ├──try3─┬─ 0-18000: lr = 1e-4; batch_size=16; moment=0.3;
+  |       └─ 18001-24000: lr = 2e-5; batch_size=14;
+  └──try4─┬─ 0-18000: lr = 1e-4; batch_size=14; moment=0.3;
+          └─ 18001-30000: lr = 5e-5; loss_weight=[1, 0.3, 0.5, 0.15]
+     try5─┬─ 0-_: lr=1e-4; batch_size=14; moment=0.3;
+          └─
+
+repo ResNet50:
+    ├── 0-9000: lr = 1e-4; batch_size = 7; moment = 0.3
+    ├── 9001-15000: lr = 2e-5; b_s = 7; moment = 0.9
+    └── 15000-_: lr = 2e-5; moment = 0.6
+
+
+test:
+mtcnn / facebox/ repo_official
+repo_my / try1 / try3
+
+nms threshold = 0.35
+confidence threshold min = 0.35 (only bigger than this will be selected)
