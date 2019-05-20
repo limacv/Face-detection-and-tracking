@@ -8,7 +8,7 @@ import torch.utils.data as data
 
 from layers import *
 from pyramid import build_sfd as build_net_repo
-from pyramid_mb2_official import build_sfd_mobile as build_net_try3
+from pyramid_mb2_try3 import build_sfd_mobile as build_net_try3
 from pyramid_mb2_try4 import build_sfd_mobile as build_net_try4
 from pyramid_mobile_try1 import build_sfd_mobile as build_net_try1
 from utils.data_collector import Data_collector

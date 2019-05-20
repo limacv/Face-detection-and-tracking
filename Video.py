@@ -10,7 +10,7 @@ import scipy.io as sio
 import time
 
 from PIL import Image, ImageDraw
-from pyramid_mb2_official import build_sfd_mobile as build_sfd_mobile_try3
+from pyramid_mb2_try3 import build_sfd_mobile as build_sfd_mobile_try3
 from pyramid_mobile_try1 import build_sfd_mobile as build_sfd_mobile_try1
 from pyramid_mobile_try2 import build_sfd_mobile as build_sfd_mobile_try2
 from pyramid import build_sfd
